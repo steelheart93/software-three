@@ -5,6 +5,16 @@
         value="{{ old('publication', $post->publication) }}">
 </div>
 <div class="form-group">
+    <select name="category_id" id="category_id" aria-label="Default">
+        <option selected disabled>Selecciona una opción</option>
+        @foreach ($categories as $category_name => $id)
+            <option {{ $post->category_id == $id ? 'selected="selected"' : '' }} value="{{ $id }}">
+                {{ category_name }}
+            </option>
+        @endforeach
+    </select>
+</div>
+<div class="form-group">
     <select name="state_publication" id="state_publication" class="form-control">
         <option value="">Publicado</option>
         <option value="">No publicado</option>
@@ -16,5 +26,5 @@
         {{ old('content_publication', $post->content_publication) }}
     </textarea>
 </div>
-<button type="submit" class="btn btn-success">Aceptar</button>
-<button class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</button>
+<button type="submit" class="btn btn-success btn-sm">Aceptar</button>
+<a class="btn btn-danger btn-sm" href="{{ URL::previous() }}">Cancelar</a>
