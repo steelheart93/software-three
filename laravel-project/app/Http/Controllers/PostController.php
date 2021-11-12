@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view("dashboard.post.index");
+        $posts = Post::orderBy('id', 'ASC')->paginate(10);
+        return view("dashboard.post.index", ['posts' => $posts]);
     }
 
     /**
@@ -24,7 +25,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("dashboard.post.create", ["post" => new Post()]);
+        $categories = Category::pluck('id', 'category_name');
+        return view("dashboard.post.create", [
+            "post" => new Post(),
+            'categories' => $categories,
+        ]);
     }
 
     /**
