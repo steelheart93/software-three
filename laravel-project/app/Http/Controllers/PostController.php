@@ -70,7 +70,8 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        Post::update($request->validated());
+        return back()->with("status", "Publicación actualizada con éxito");
     }
 
     /**
@@ -81,6 +82,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return back()->with("status", "Publicación eliminada con éxito");
     }
 }
