@@ -47,7 +47,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view("dashboard.post.show", ["post" => $post]);
     }
 
     /**
@@ -58,7 +58,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view("dashboard.post.edit");
+        return view("dashboard.post.edit", ["post" => $post]);
     }
 
     /**
