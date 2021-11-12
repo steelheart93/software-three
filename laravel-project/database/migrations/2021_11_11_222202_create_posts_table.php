@@ -15,6 +15,9 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string("publication")->nullable()->default("text");
+            $table->enum("state_publication", ["published", "reject", "in_review"]);
+            $table->text("content_publication")->nullable();
             $table->timestamps();
         });
     }
