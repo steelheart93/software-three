@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
+use App\Models\Category;
+use App\Models\Post;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'ASC')->paginate(10);
+        $posts = Post::orderBy('id', 'ASC')->paginate(2);
         return view("dashboard.post.index", ['posts' => $posts]);
     }
 
