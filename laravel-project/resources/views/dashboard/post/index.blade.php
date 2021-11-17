@@ -1,5 +1,9 @@
 @extends('dashboard.master')
 @section('content')
+    <div class="mb-3">
+        <a class="btn btn-success btn-sm" href="{{ route('post.create') }}">Añadir publicación</a>
+    </div>
+
     <table class="table table-striped table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
