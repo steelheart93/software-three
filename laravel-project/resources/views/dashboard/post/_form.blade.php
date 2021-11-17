@@ -16,9 +16,9 @@
 </div>
 <div class="form-group">
     <select name="state_publication" id="state_publication" class="form-control">
-        <option value="">Publicado</option>
-        <option value="">No publicado</option>
-        <option value="">En revisión</option>
+        <option value="published">Publicado</option>
+        <option value="reject">No publicado</option>
+        <option value="in_review">En revisión</option>
     </select>
 </div>
 <div class="form-group">

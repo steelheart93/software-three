@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -73,7 +75,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
         Post::update($request->validated());
         return back()->with("status", "Publicación actualizada con éxito");
