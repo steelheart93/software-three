@@ -1,8 +1,8 @@
 @extends('dashboard.master')
 @section('content')
-    <h6>Editar publicación</h6>
-    <form action="{{ route('post.update', $post) }}" method="POST">
+    <h6>Editar categoría</h6>
+    <form action="{{ route('category.update', $category) }}" method="POST">
         @method("PUT")
-        @include('dashboard.post._form')
+        @include('dashboard.category._form')
     </form>
 @endsection
