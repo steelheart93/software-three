@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('coronapp.about');
 });
+
+Route::get('/cifras', function () {
+    return view('coronapp.cifras');
+});

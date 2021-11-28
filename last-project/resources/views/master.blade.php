@@ -8,19 +8,20 @@
     <title>laravel-project</title>
     {{-- link:css --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {{-- script:src --}}
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 
 <body>
     @include("structure.navbar")
+
     {{-- .container --}}
-    <div class="container">
-        <div class="jumbotron">
+    <div class="container-fluid">
+        <div class="p-5">
             @include("structure.status")
             @yield("content")
         </div>
     </div>
-    {{-- script:src --}}
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
