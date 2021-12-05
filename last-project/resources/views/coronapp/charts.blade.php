@@ -1,10 +1,14 @@
 @extends('master')
 @section('content')
+    <h1 class="pt-2 text-center">Gráficos con Google Charts</h1>
     <div class="row">
-        <div class="col-lg-12 text-center">
-            <iframe frameborder="0" style="width: 89vw; height: 84vh;"
-                src="https://e.infogram.com/947b09e2-e784-43ee-a618-95266cab42bf?src=embed#async_embed"
-                title="Panorama General"></iframe>
+        <div class="col-md-6 p-4">
+            <google-chart [title]="pieChart.title" [type]="pieChart.type" [columns]="pieChart.columnNames"
+                [data]="pieChart.data" [options]="pieChart.options"></google-chart>
+        </div>
+        <div class="col-md-6 p-4">
+            <google-chart [title]="columnChart.title" [type]="columnChart.type" [columns]="columnChart.columnNames"
+                [data]="columnChart.data"></google-chart>
         </div>
     </div>
 @endsection
