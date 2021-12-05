@@ -17,7 +17,7 @@
 
     {{-- .container --}}
     <div class="container-fluid">
-        <div class="p-5">
+        <div class="pt-2">
             @include("structure.status")
             @yield("content")
         </div>
