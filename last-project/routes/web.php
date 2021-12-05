@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,8 @@ Route::get('/datos', function () {
 })->name('datos');
 
 Route::get('/charts', function () {
-    return view('coronapp.charts');
+    return view('coronapp.charts', [
+        "estados" => json_encode(ApiController::getEstados()),
+        "departamentos" => json_encode(ApiController::getDepartamentos()),
+    ]);
 })->name('charts');
