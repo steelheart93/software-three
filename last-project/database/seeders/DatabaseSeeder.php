@@ -15,13 +15,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\Cita::factory(10)->create();
-
         User::create([
             'name' => 'admin',
             'email' => 'admin@123.com',
+            'email_verified_at' => now(),
             'password' => Hash::make('admin123'),
             'role' => 'admin',
         ]);
+
+        User::create([
+            'name' => 'employee',
+            'email' => 'employee@123.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('employee123'),
+            'role' => 'employee',
+        ]);
+
+        User::create([
+            'name' => 'user',
+            'email' => 'user@123.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('user123'),
+            'role' => 'user',
+        ]);
+
+        User::factory(10)->create();
     }
 }
