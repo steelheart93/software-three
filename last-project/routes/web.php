@@ -32,3 +32,7 @@ Route::get('/charts', function () {
         "departamentos" => json_encode(ApiController::getDepartamentos()),
     ]);
 })->name('charts');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
