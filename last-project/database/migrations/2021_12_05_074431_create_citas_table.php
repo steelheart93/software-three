@@ -15,6 +15,11 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table-> text('cc',100);
+            $table-> text('nombre',100);
+            $table-> text('eps',100);
+            $table-> text('fecha_cita',100)->nullable();
+            $table-> enum("tipo_cita",["primera_dosis","segunda_dosis","Informativa","Prueba_Covid"])->default("Informativa");
             // Cedula, Nombre, EPS, Fecha de la cita, Tipo cita (enum->"Primera dosis", "Segunda dosis", "Informativa", "Prueba COVID")
             $table->timestamps();
         });

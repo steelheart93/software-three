@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Cita;
 use Illuminate\Http\Request;
+use vendor\laravel\framework\src\Illuminate\Support\helpers;
+use DB;
+use vendor\laravel\framework\src\Illuminate\Support\Str;
+use vendor\laravel\framework\src\Illuminate\Support\Arr;
+
+
 
 class CitaController extends Controller
 {
@@ -14,7 +21,7 @@ class CitaController extends Controller
      */
     public function index()
     {
-        //
+        return view('coronapp.quotes');
     }
 
     /**
@@ -24,7 +31,8 @@ class CitaController extends Controller
      */
     public function create()
     {
-        //
+        return view('coronapp.quotes',['citas' => new Cita()]);
+
     }
 
     /**
@@ -35,7 +43,16 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $cedula= $data["cedula"];
+        $nombre = $data["nombre"];
+        $eps = $data["eps"];
+        $choises = $data["choices"];
+
+        $data=array("cc"=>$cedula,"nombre"=>$nombre,"eps"=>$eps,"tipo_cita"=>$choises);
+        DB::table('citas')->insert($data);
+
+        return back()->with('status', 'Cita generada con éxito');
     }
 
     /**
