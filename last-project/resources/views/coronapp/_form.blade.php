@@ -13,6 +13,10 @@
     <input type="text" class="form-control" name="eps" id="eps"
         placeholder="EPS" value="">
 </div>
+<div class="form-group my-2">
+    <input type="text" class="form-control" name="fecha_cita" id="fecha_cita"
+        placeholder="Fecha Cita" value="">
+</div>
 
 <div class="form-group my-4">
     <select class="form-control" name="choices" id="choices">

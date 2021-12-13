@@ -41,3 +41,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('quotes',CitaController::class);
+Route::post('edit/{id}',[CitaController::class, 'update']);
+Route::get('show/{id}', [CitaController::class, 'show']);
+Route::get('edit/{id}', [CitaController::class, 'edit']);
+Route::get('update/{id}', [CitaController::class, 'update']);
+Route::get('destroy/{id}', [CitaController::class, 'destroy']);
+//Route::get('quotes/{id}', CitaController::class);

@@ -79,7 +79,10 @@
                     @endif
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/quotes">{{ __('citas') }}</a>
+                            <a class="nav-link" href="{{ route('quotes.create') }}">{{ __('citas') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('quotes.index') }}">{{ __('lista de citas') }}</a>
                         </li>
 
 
