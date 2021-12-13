@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Cita extends Model
 {
     use HasFactory;
+    protected $fillable = ['cc','nombre','eps','fecha_cita','tipo_cita'];
 }
