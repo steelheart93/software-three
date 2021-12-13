@@ -17,7 +17,7 @@ class CitaController extends Controller
     {
 
         $cita = DB::select('SELECT * FROM citas');
-        return view('citas.index', ['cita' => $cita]);
+        return view('cita.index', ['cita' => $cita]);
     }
 
     /**
@@ -27,7 +27,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        return view('citas.create', ['citas' => new Cita()]);
+        return view('cita.create', ['citas' => new Cita()]);
     }
 
     /**
@@ -50,7 +50,7 @@ class CitaController extends Controller
      */
     public function show(Cita $cita)
     {
-        return view('citas.show', ['cita' => $cita]);
+        return view('cita.show', ['cita' => $cita]);
     }
 
     /**
@@ -61,7 +61,7 @@ class CitaController extends Controller
      */
     public function edit(Cita $cita)
     {
-        return view('citas.edit', ['cita' => $cita]);
+        return view('cita.edit', ['cita' => $cita]);
     }
 
     /**

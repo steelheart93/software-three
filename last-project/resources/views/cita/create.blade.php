@@ -7,12 +7,9 @@
 
             <h3 class="display-4 text-center">Asignar Cita</h3>
 
-            <form action="{{ route('quotes.store') }}" method="POST">
-            @include('coronapp._form')
+            <form action="{{ route('cita.store') }}" method="POST">
+                @include('cita._form')
             </form>
         </div>
     </div>
-
-
-
 @endsection
