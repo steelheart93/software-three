@@ -27,7 +27,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        return view('cita.create', ['citas' => new Cita()]);
+        return view('cita.create', ['cita' => new Cita()]);
     }
 
     /**

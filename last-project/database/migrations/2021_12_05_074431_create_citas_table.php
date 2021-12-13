@@ -19,7 +19,7 @@ class CreateCitasTable extends Migration
             $table->text('nombre');
             $table->text('eps');
             $table->text('fecha_cita')->nullable();
-            $table->enum("tipo_cita", ["primera_dosis", "segunda_dosis", "informativa", "prueba_Covid"])->default("informativa");
+            $table->enum("tipo_cita", ["primera_dosis", "segunda_dosis", "informativa", "prueba_covid"])->default("informativa");
             $table->timestamps();
         });
     }

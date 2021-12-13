@@ -1,31 +1,34 @@
 @csrf
 @include('structure.validation-error')
-<div class="form-group my-2">
-    <input type="text" class="form-control" name="cc" id="cc" placeholder="Cédula" value="">
+<div class="form-group">
+    <input type="text" class="form-control" name="cc" id="cc" placeholder="Cédula"
+        value="{{ old('publication', $cita->cc) }}">
 </div>
-<div class="form-group my-2">
-    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre Usuario" value="">
+<div class="form-group">
+    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre Usuario"
+        value="{{ old('publication', $cita->nombre) }}">
 </div>
-
-<div class="form-group my-2">
-    <input type="text" class="form-control" name="eps" id="eps" placeholder="EPS" value="">
+<div class="form-group">
+    <input type="text" class="form-control" name="eps" id="eps" placeholder="EPS"
+        value="{{ old('publication', $cita->eps) }}">
 </div>
-<div class="form-group my-2">
-    <input type="text" class="form-control" name="fecha_cita" id="fecha_cita" placeholder="Fecha Cita" value="">
+<div class="form-group">
+    <input type="text" class="form-control datepicker" name="fecha_cita" id="fecha_cita" placeholder="Fecha de la Cita"
+        value="{{ old('publication', $cita->fecha_cita) }}">
 </div>
-
-<div class="form-group my-4">
-    <select class="form-control" name="choices" id="choices">
-        <option value="1">primera dosis</option>
-        <option value="2">segunda dosis</option>
-        <option value="3">informativa</option>
-        <option value="4">prueba covid</option>
+<div class="form-group">
+    <select class="form-control" name="tipo_cita" id="tipo_cita">
+        <option value="primera_dosis">Primera Dosis</option>
+        <option value="segunda_dosis">Segunda Dosis</option>
+        <option value="informativa">Informativa</option>
+        <option value="prueba_covid">Prueba COVID</option>
     </select>
 </div>
-<div class="col-lg-12 m-auto">
-    <div class="text-center">
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a class="btn btn-danger" href="/">atras</a>
-    </div>
+<button type="submit" class="btn btn-success">Aceptar</button>
+<a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
 
-</div>
+<script>
+    $(function() {
+        $('datepicker').datepicker();
+    });
+</script>
