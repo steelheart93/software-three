@@ -13,8 +13,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-                <li class="nav-item @if (Route::is('cifras')) active @endif">
-                    <a class="nav-link" href="{{ route('cifras') }}">
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::is('cifras')) active @endif" href="{{ route('cifras') }}">
                         <p class="text-center">
                             <svg class="bi bi-info-circle" width="2em" height="2em" viewBox="0 0 16 16"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,8 +29,8 @@
                         Cifras
                     </a>
                 </li>
-                <li class="nav-item @if (Route::is('datos')) active @endif">
-                    <a class="nav-link" href="{{ route('datos') }}">
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::is('datos')) active @endif" href="{{ route('datos') }}">
                         <p class="text-center">
                             <svg class="bi bi-clipboard-data" width="2em" height="2em" viewBox="0 0 16 16"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -47,8 +47,8 @@
                         Datos
                     </a>
                 </li>
-                <li class="nav-item @if (Route::is('charts')) active @endif">
-                    <a class="nav-link" href="{{ route('charts') }}">
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::is('charts')) active @endif" href="{{ route('charts') }}">
                         <p class="text-center">
                             <svg class="bi bi-pie-chart-fill" width="2em" height="2em" viewBox="0 0 16 16"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cita.create') }}">
+                    <a class="nav-link @if (Route::is('cita.create')) active @endif" href="{{ route('cita.create') }}">
                         <p class="text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor"
                                 class="bi bi-person-plus-fill" viewBox="0 0 16 16">
@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cita.index') }}">
+                    <a class="nav-link @if (Route::is('cita.index')) active @endif" href="{{ route('cita.index') }}">
                         <p class="text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor"
                                 class="bi bi-person-lines-fill" viewBox="0 0 16 16">
@@ -112,7 +112,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                                                                                     document.getElementById('logout-form').submit();">
                                 {{ __('Cerrar sesión') }}
                             </a>
 
