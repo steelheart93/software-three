@@ -45,34 +45,37 @@ class CitaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cita  $cita
+     * @param  $id, identificador de la cita
      * @return \Illuminate\Http\Response
      */
-    public function show(Cita $cita)
+    public function show($id)
     {
+        $cita = Cita::find($id);
         return view('cita.show', ['cita' => $cita]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Cita  $cita
+     * @param  $id, identificador de la cita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cita $cita)
+    public function edit($id)
     {
-        return view('cita.edit', ['cita' => $cita]);
+        $cita = Cita::find($id);
+        return view('cita.edit', ["cita" => $cita]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cita  $cita
+     * @param  $id, identificador de la cita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cita $cita)
+    public function update(Request $request, $id)
     {
+        $cita = Cita::find($id);
         $cita->update($request->all());
         return back()->with('status', 'Cita actualizada con éxito');
     }
@@ -80,11 +83,12 @@ class CitaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Cita  $cita
+     * @param  $id, identificador de la cita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cita $cita)
+    public function destroy($id)
     {
+        $cita = Cita::find($id);
         $cita->delete();
         return back()->with('status', 'Cita cancelada con éxito');
     }

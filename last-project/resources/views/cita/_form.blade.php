@@ -3,21 +3,21 @@
 <div class="row p-2">
     <div class="form-group col-md-6">
         <input type="text" class="form-control" name="cc" id="cc" placeholder="Cédula del paciente"
-            value="{{ old('publication', $cita->cc) }}">
+            value="{{ old('cc', $cita->cc) }}">
     </div>
     <div class="form-group col-md-6">
         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del paciente"
-            value="{{ old('publication', $cita->nombre) }}">
+            value="{{ old('nombre', $cita->nombre) }}">
     </div>
 </div>
 <div class="row p-2">
     <div class="form-group col-md-6">
         <input type="text" class="form-control" name="eps" id="eps" placeholder="EPS del paciente"
-            value="{{ old('publication', $cita->eps) }}">
+            value="{{ old('eps', $cita->eps) }}">
     </div>
     <div class="form-group col-md-6">
-        <input type="date" class="form-control" name="fecha_cita" id="fecha_cita" placeholder="Fecha de la cita"
-            value="{{ old('publication', $cita->fecha_cita) }}">
+        <input type="datetime-local" class="form-control" name="fecha_cita" id="fecha_cita"
+            placeholder="Fecha de la cita" value="{{ old('fecha_cita', $cita->fecha_cita) }}">
     </div>
 </div>
 <div class="row p-2">

@@ -26,7 +26,11 @@
                         <td>
                             <a href="{{ route('cita.show', $cita->id) }}" class="btn btn-info btn-sm">Consultar</a>
                             <a href="{{ route('cita.edit', $cita->id) }}" class="btn btn-info btn-sm">Editar</a>
-                            <a href="{{ route('cita.destroy', $cita->id) }}" class="btn btn-danger btn-sm">Eliminar</a>
+                            <form class="d-inline" action="{{ route('cita.destroy', $cita->id) }}" method="post">
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

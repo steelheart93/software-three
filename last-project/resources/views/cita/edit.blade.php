@@ -1,8 +1,10 @@
-@extends('dashboard.master')
+@extends('master')
 @section('content')
-    <h6>Editar cita</h6>
-    <form action="{{ route('cita.update', $cita) }}" method="POST">
-        @method("PUT")
-        @include('cita._form')
-    </form>
+    <div class="row p-5">
+        <h4 class="pb-3">Editar Cita</h4>
+        <form action="{{ route('cita.update', $cita->id) }}" method="POST">
+            @method("PUT")
+            @include('cita._form')
+        </form>
+    </div>
 @endsection
