@@ -16,8 +16,8 @@ class CitaController extends Controller
     public function index()
     {
 
-        $cita = DB::select('SELECT * FROM citas');
-        return view('cita.index', ['cita' => $cita]);
+        $citas = DB::select('SELECT * FROM citas');
+        return view('cita.index', ['citas' => $citas]);
     }
 
     /**

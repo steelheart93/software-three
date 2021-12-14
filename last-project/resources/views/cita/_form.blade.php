@@ -16,7 +16,7 @@
             value="{{ old('publication', $cita->eps) }}">
     </div>
     <div class="form-group col-md-6">
-        <input type="text" class="form-control" name="fecha_cita" id="fecha_cita" placeholder="Fecha de la cita"
+        <input type="date" class="form-control" name="fecha_cita" id="fecha_cita" placeholder="Fecha de la cita"
             value="{{ old('publication', $cita->fecha_cita) }}">
     </div>
 </div>
@@ -38,6 +38,6 @@
 
 <script>
     $(function() {
-        $('#fecha_cita').datepicker();
+        $('#fecha_').datepicker();
     });
 </script>
