@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cita;
-use DB;
 use Illuminate\Http\Request;
 
 class CitaController extends Controller
@@ -15,8 +14,8 @@ class CitaController extends Controller
      */
     public function index()
     {
-
-        $citas = DB::select('SELECT * FROM citas');
+        // $citas = DB::select('SELECT * FROM citas');
+        $citas = Cita::orderBy('id', 'ASC')->paginate(7);
         return view('cita.index', ['citas' => $citas]);
     }
 
