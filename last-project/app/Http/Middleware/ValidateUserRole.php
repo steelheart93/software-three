@@ -16,6 +16,9 @@ class ValidateUserRole
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (auth()->user()->role == "user") {
+            return $next($request);
+        }
+        return abort(403, 'Acción no autorizada, si el problema persiste por favor comuníquese con soporte.');
     }
 }

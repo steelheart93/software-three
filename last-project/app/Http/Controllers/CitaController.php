@@ -10,6 +10,9 @@ class CitaController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        // $this->middleware(['auth', 'role.user'])->except('create', 'show');
+        // $this->middleware(['auth', 'role.employee'])->except('create', 'index', 'show');
+        $this->middleware(['auth', 'role.admin'])->except('create', 'edit', 'index', 'show');
     }
 
     /**

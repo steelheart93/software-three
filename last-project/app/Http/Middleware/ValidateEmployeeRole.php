@@ -16,6 +16,9 @@ class ValidateEmployeeRole
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (auth()->user()->role == "employee") {
+            return $next($request);
+        }
+        return abort(403, 'Acción no autorizada, si el problema persiste por favor comuníquese con soporte.');
     }
 }
