@@ -14,7 +14,11 @@ class CitaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'cc' => $this->faker->isbn10(),
+            'nombre' => $this->faker->name(),
+            'eps' => $this->faker->company(),
+            'fecha_cita' => $this->faker->dateTime(),
+            'tipo_cita' => $this->faker->randomElement(["primera_dosis", "segunda_dosis", "informativa", "prueba_covid"]),
         ];
     }
 }

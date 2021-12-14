@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cita;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +23,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin123'),
             'role' => 'admin',
         ]);
-
         User::create([
             'name' => 'employee',
             'email' => 'employee@123.com',
@@ -30,7 +30,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('employee123'),
             'role' => 'employee',
         ]);
-
         User::create([
             'name' => 'user',
             'email' => 'user@123.com',
@@ -38,7 +37,9 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('user123'),
             'role' => 'user',
         ]);
+        User::factory(4)->create();
 
-        User::factory(10)->create();
+        $this->call(CitaSeeder::class);
+        Cita::factory(20)->create();
     }
 }
