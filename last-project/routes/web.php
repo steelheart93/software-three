@@ -36,4 +36,9 @@ Route::get('/charts', function () {
 })->name('charts');
 
 Auth::routes();
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
 Route::resource('cita', CitaController::class);
