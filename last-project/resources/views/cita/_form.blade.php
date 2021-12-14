@@ -35,9 +35,3 @@
         <a class="btn btn-danger m-2" href="{{ URL::previous() }}">Cancelar</a>
     </div>
 </div>
-
-<script>
-    $(function() {
-        $('#fecha_').datepicker();
-    });
-</script>
