@@ -19,7 +19,6 @@ class ValidateAdminRole
         if (auth()->user()->role == "admin") {
             return $next($request);
         }
-        // return route('login');
-        return abort(403, 'Acción no autorizada, si el problema persiste por favor comuníquese con soporte.');
+        return route('login');
     }
 }
