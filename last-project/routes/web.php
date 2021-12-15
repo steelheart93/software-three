@@ -34,7 +34,7 @@ Route::get('/datos', function () {
 
 Route::get('/charts', function () {
     return view('coronapp.charts', [
-        "estados" => json_encode(ApiController::getEstados()),
+        "estados" => ApiController::getEstados(),
         "departamentos" => json_encode(ApiController::getDepartamentos()),
     ]);
 })->name('charts');
