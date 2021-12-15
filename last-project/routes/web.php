@@ -25,7 +25,11 @@ Route::get('/cifras', function () {
 })->name('cifras');
 
 Route::get('/datos', function () {
-    return view('coronapp.datos');
+    return view('coronapp.datos', [
+        "departamentos" => ApiController::getGrupos("departamento_nom"),
+        "ciudades" => ApiController::getGrupos("ciudad_municipio_nom"),
+        "datos" => json_encode(ApiController::getDatosTabla()),
+    ]);
 })->name('datos');
 
 Route::get('/charts', function () {

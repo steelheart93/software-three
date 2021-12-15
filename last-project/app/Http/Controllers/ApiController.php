@@ -42,4 +42,16 @@ class ApiController extends Controller
         $QUERY_STRING = '?$select=departamento_nom, count(departamento_nom) AS count&$group=departamento_nom&$order=count DESC&$limit=10';
         return Http::get(static::$API_URI . $QUERY_STRING)->json();
     }
+
+    public static function getGrupos($grupo)
+    {
+        $QUERY_STRING = '?$select=' . $grupo . '&$group=' . $grupo . '&$order=' . $grupo;
+        return Http::get(static::$API_URI . $QUERY_STRING)->json();
+    }
+
+    public static function getDatosTabla()
+    {
+        // Falta aplicar filtros
+        return Http::get(static::$API_URI)->json();
+    }
 }
